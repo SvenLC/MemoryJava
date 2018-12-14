@@ -25,19 +25,18 @@ public class CarteMemory implements ICarte {
         this.etat = c.getEtat();
         this.imageId = c.getImage();
     }
-   
+
     public CarteMemory(Couleur couleur, Symbole motif) {
         this.couleur = couleur;
         this.motif = motif;
         this.etat = Etat.SLEEP;
-        
+
     }
 
     public int getId() {
         return this.ID;
     }
 
-   
     public Couleur getCouleur() {
         return couleur;
     }
@@ -54,15 +53,13 @@ public class CarteMemory implements ICarte {
         return imageId;
     }
 
-   
     public boolean isCompatible(ICarte c) {
-        return c.getCouleur().equals(this.getCouleur()) ||
-               c.getMotif().equals(this.getMotif());
+        return c.getCouleur().equals(this.getCouleur()) || c.getMotif().equals(this.getMotif());
     }
 
     public void setID(int ID) {
         this.ID = ID;
-    }   
+    }
 
     public void setCouleur(Couleur couleur) {
         this.couleur = couleur;
@@ -77,7 +74,7 @@ public class CarteMemory implements ICarte {
     }
 
     public void active() {
-        this.etat = Etat.ACTIVE;        
+        this.etat = Etat.ACTIVE;
     }
 
     public void sleep() {

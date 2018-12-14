@@ -10,14 +10,11 @@ public class Memory {
 
     public Memory() {
 
-        PaquetCarteMemory paquet = new PaquetCarteMemory();
+        paquet = new PaquetCarteMemory();
         paquet.melanger();
 
-        Grille grille = new Grille(paquet) {
+        grille = new Grille(paquet) {
         };
-
-        this.grille = grille;
-        this.paquet = paquet;
 
     }
 

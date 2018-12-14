@@ -1,7 +1,8 @@
 package Memory;
 
 public enum Symbole {
-    MAISON("maison"), BALLON("ballon"), FANION("fanion"), DIAMANT("diamant"), ARBRE("arbres"), ETOILE("étoile"), LAPIN("lapins"), RADIS("*radis"), DINDON("dindon"), VIDE("*vide*");
+    MAISON("maison"), BALLON("ballon"), FANION("fanion"), DIAMANT("diamant"), ARBRE("arbres"), ETOILE("étoile"),
+    LAPIN("lapins"), RADIS("*radis"), DINDON("dindon"), VIDE("*vide*");
 
     private String affichage; // 6 caractères différents
 
@@ -16,17 +17,16 @@ public enum Symbole {
 
     public static String getStringFromSymbole(Symbole motif) {
         String m = motif.affichage;
- 
+
         return m;
- 
-        
+
     }
 
     public static Symbole getSymboleFromString(String motif) {
         Symbole enumSymbole = null;
 
         for (Symbole s : Symbole.values()) {
-            if(s.affichage.equals(motif)) {
+            if (s.affichage.equals(motif)) {
                 enumSymbole = s;
             }
 
@@ -34,5 +34,5 @@ public enum Symbole {
 
         return enumSymbole;
     }
-  
+
 }
