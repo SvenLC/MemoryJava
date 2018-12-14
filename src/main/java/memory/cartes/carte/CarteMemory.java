@@ -92,7 +92,7 @@ public class CarteMemory implements ICarte {
 
     @Override
     public String toString() {
-        return "Carte [couleur = " + couleur + " Motif = " + motif + " Etat = " + etat + " Image = " + imageId + "]";
+        return "Carte [Couleur = " + couleur + " Motif = " + motif + "]";
     }
 
 }
