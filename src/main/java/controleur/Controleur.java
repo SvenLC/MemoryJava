@@ -12,57 +12,48 @@ import ihm.MemoryWindows;
 import memory.Memory;
 
 public class Controleur {
-   
+
     private Memory memory;
-
-    private int idCarte1 = -1;
-    private int idCarte2 = -1;
-    private int nbCoup = 0;
-
     // Windows
     private MemoryWindows fenetre;
     private MemoryMenu menu;
     private MemoryVictory victory;
-
     // Listener
     private Listener listener;
     private KeyboardListener keyboardListener;
-
-    
+    // Card Id
+    private int idCarte1 = -1;
+    private int idCarte2 = -1;
 
     public Controleur() throws InterruptedException {
 
-        memory = new Memory();        
+        memory = new Memory();
         memory.autoPlay();
-        
-        // listener = new Listener(this);
-        // keyboardListener = new KeyboardListener(this);
-        // fenetre = new MemoryWindows("Memory", listener, keyboardListener);
-        // fenetre.setFocusable(true);
-        // fenetre.requestFocusInWindow();
-        
 
+        listener = new Listener(this);
+        keyboardListener = new KeyboardListener(this);
+        fenetre = new MemoryWindows("Memory", listener, keyboardListener);
+        fenetre.setFocusable(true);
+        fenetre.requestFocusInWindow();
     }
 
     public void GererClick(ActionEvent e) {
 
         if (idCarte1 != -1 && idCarte2 != -1) {
             if (!memory.CheckCarte(idCarte1, idCarte2)) {
+
                 memory.SetSleep(idCarte1, idCarte2);
                 fenetre.CacherCarte(idCarte1, idCarte2);
-            }
-            if(memory.CheckCarte(idCarte1, idCarte2)) {
-                nbCoup += 1;
             }
 
             idCarte1 = -1;
             idCarte2 = -1;
-
         }
 
         int i = ((CarteJButton) e.getSource()).getId();
 
         if (idCarte1 == -1) {
+
             idCarte1 = i;
             memory.SetActive(i);
             String imageId = memory.GetImageId(i);
@@ -74,11 +65,11 @@ public class Controleur {
             String imageId = memory.GetImageId(i);
             fenetre.voirCarte(i, imageId);
 
-        }        
+        }
 
         fenetre.requestFocusInWindow();
 
-        if(memory.isVictory()) {
+        if (memory.isVictory()) {
 
             victory = new MemoryVictory("Vitoire !", listener);
 
@@ -98,7 +89,6 @@ public class Controleur {
 
     public void Quitter() {
         // Vérifier que toutes les connexions soient fermées et tout ça et tout ça !!!!!
-
         System.exit(0);
     }
 

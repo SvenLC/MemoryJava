@@ -11,19 +11,18 @@ public class Memory {
     private static IGrille grille;
     private static PaquetCarteMemory paquet;
     private boolean victory;
-
-    private static int x = 0;
-    private static int y = 0;  
-    private int compteur = 0;
     private boolean victoire;
+    private int x = 0;
+    private int y = 0;
+    private int compteur = 0;
 
     public Memory() {
 
         paquet = new PaquetCarteMemory();
         paquet.melanger();
 
-        grille = new Grille(paquet){};
-
+        grille = new Grille(paquet) {
+        };
     }
 
     public boolean CheckCarte(int IdCarte1, int IdCarte2) {
@@ -63,12 +62,12 @@ public class Memory {
         return grille.getCarte(i).getImage();
     }
 
-    public boolean isVictory(){
+    public boolean isVictory() {
 
         for (int i = 0; i < 16; i++) {
             ICarte carte = grille.getCarte(i);
 
-            if(carte.getEtat().equals(Etat.SLEEP)) {
+            if (carte.getEtat().equals(Etat.SLEEP)) {
                 victory = false;
                 i = 16;
             }
@@ -83,70 +82,62 @@ public class Memory {
     }
 
     public boolean autoPlay() throws InterruptedException {
-        victoire = false;      
-        
-        CarteMemory carte1 = (CarteMemory)grille.getCarte(x);
-        CarteMemory carte2 = (CarteMemory)grille.getCarte(y);   
-        
-        while(!victoire) {  
+        victoire = false;
+
+        CarteMemory carte1 = (CarteMemory) grille.getCarte(x);
+        CarteMemory carte2 = (CarteMemory) grille.getCarte(y);
+
+        while (!victoire) {
             Thread.sleep(1000);
-          
-            carte1 = (CarteMemory)grille.getCarte(x);  
-            carte2 = (CarteMemory)grille.getCarte(y);    
 
-            while(!carte1.getEtat().equals(Etat.SLEEP)) {
-               
+            carte1 = (CarteMemory) grille.getCarte(x);
+            carte2 = (CarteMemory) grille.getCarte(y);
+
+            while (!carte1.getEtat().equals(Etat.SLEEP)) {
+
                 x++;
-                carte1 = (CarteMemory)grille.getCarte(x);                  
+                carte1 = (CarteMemory) grille.getCarte(x);
 
-            }  
-            grille.getCarte(x).active();         
+            }
+            grille.getCarte(x).active();
 
-            while(!carte2.getEtat().equals(Etat.SLEEP)) { 
+            while (!carte2.getEtat().equals(Etat.SLEEP)) {
 
                 y++;
-                carte2 = (CarteMemory)grille.getCarte(y);                   
-                      
+                carte2 = (CarteMemory) grille.getCarte(y);
+
             }
             grille.getCarte(y).active();
-            
-            
 
-            
-            //System.out.println("Carte 1 : X=" + x + " Y=" + y + " Carte 2 : X=" + x2 + " Y=" + y2);
-            System.out.println(carte1.toString() + "\n" + carte2.toString());           
-            
-            
+            System.out.println(carte1.toString() + "\n" + carte2.toString());
 
-            if (carte1.isCompatible(carte2)) {                
+            if (carte1.isCompatible(carte2)) {
                 grille.getCarte(x).toDisplay();
-                grille.getCarte(y).toDisplay();                
+                grille.getCarte(y).toDisplay();
                 System.out.println("Les cartes correspondent");
 
                 y = x;
                 compteur++;
-            } 
+            }
 
             else {
-                SetSleep(x, y);                
+                SetSleep(x, y);
                 System.out.println("Les cartes ne correspondent pas");
 
-                if(y == 15) {
+                if (y == 15) {
                     y = 0;
-                    if(x < 15) {
+                    if (x < 15) {
                         x++;
                     }
-                }
-                else {
+                } else {
                     y++;
-                }              
+                }
             }
 
             if (compteur == 8) {
-                victoire = true;                
+                victoire = true;
                 System.out.println("Victoire !");
             }
-
         }
 
         return victoire;
