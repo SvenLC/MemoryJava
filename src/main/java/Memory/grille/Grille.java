@@ -13,10 +13,6 @@ public abstract class Grille implements IGrille {
 
     private ICarte[][] grille = new CarteMemory[NB_LIGNES][NB_COLONNES];
 
-    public Grille() {
-        this.grille = new ICarte[NB_COLONNES][NB_LIGNES];
-    }
-
     public Grille(IPaquet<ICarte> p) {
         this.grille = new ICarte[NB_LIGNES][NB_COLONNES];
         this.remplirDeCartes(p);
@@ -27,72 +23,21 @@ public abstract class Grille implements IGrille {
         return this.grille[x][y];
     }
 
-    public ICarte getCarte(int x) {
-        ICarte carte = null;
+    public ICarte getCarte(int i) {
 
-        switch (x) {
-        case 0:
-            carte = getCarte(0, 0);
-            break;
-        case 1:
-            carte = getCarte(1, 0);
-            break;
-        case 2:
-            carte = getCarte(2, 0);
-            break;
-        case 3:
-            carte = getCarte(3, 0);
-            break;
-        case 4:
-            carte = getCarte(0, 1);
-            break;
-        case 5:
-            carte = getCarte(1, 1);
-            break;
-        case 6:
-            carte = getCarte(2, 1);
-            break;
-        case 7:
-            carte = getCarte(3, 1);
-            break;
-        case 8:
-            carte = getCarte(0, 2);
-            break;
-        case 9:
-            carte = getCarte(1, 2);
-            break;
-        case 10:
-            carte = getCarte(2, 2);
-            break;
-        case 11:
-            carte = getCarte(3, 2);
-            break;
-        case 12:
-            carte = getCarte(0, 3);
-            break;
-        case 13:
-            carte = getCarte(1, 3);
-            break;
-        case 14:
-            carte = getCarte(2, 3);
-            break;
-        case 15:
-            carte = getCarte(3, 3);
-            break;
+        int x = i / 4;
+        int y = i % 4;
 
-        default:
-            break;
-        }
+        ICarte carte = grille[y][x];
 
         return carte;
     }
 
-    
     public void ajouterUneCarte(int ligne, int colonne, ICarte c) {
         this.grille[ligne][colonne] = c;
     }
 
-    private void remplirDeCartes(IPaquet<ICarte> p) {
+    public void remplirDeCartes(IPaquet<ICarte> p) {
         Iterator<ICarte> it = p.iterator();
 
         for (int ligne = 0; ligne < NB_LIGNES; ligne++) {
@@ -102,8 +47,6 @@ public abstract class Grille implements IGrille {
                 this.ajouterUneCarte(ligne, colonne, c);
 
             }
-
         }
-
     }
 }

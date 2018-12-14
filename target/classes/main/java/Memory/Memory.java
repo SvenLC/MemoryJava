@@ -2,21 +2,19 @@ package Memory;
 
 import Memory.cartes.PaquetCarteMemory;
 import Memory.cartes.carte.CarteMemory;
-import Memory.cartes.carte.ICarte;
 import Memory.grille.Grille;
-import Memory.grille.IGrille;
 
 public class Memory {
-    private static IGrille grille;
+    private static Grille grille;
     private static PaquetCarteMemory paquet;
-    private boolean victory;
 
     public Memory() {
 
         paquet = new PaquetCarteMemory();
         paquet.melanger();
 
-        grille = new Grille(paquet){};
+        grille = new Grille(paquet) {
+        };
 
     }
 
@@ -57,21 +55,7 @@ public class Memory {
         return grille.getCarte(i).getImage();
     }
 
-    public boolean isVictory(){
-
-        for (int i = 0; i < 16; i++) {
-            ICarte carte = grille.getCarte(i);
-
-            if(carte.getEtat().equals(Etat.SLEEP)) {
-                victory = false;
-                i = 16;
-            }
-        }
-
-        return victory;
-    }
-
-    public IGrille GetGrille() {
+    public Grille GetGrille() {
 
         return grille;
     }

@@ -17,20 +17,30 @@ import javax.swing.JFrame;
 public class MemoryWindows extends JFrame {
 
     private static final long serialVersionUID = 1L;
-
+    
     private List<CarteJButton> liste = new ArrayList<CarteJButton>();
 
-    private static final String dir = System.getProperty("user.dir");
-    private static final String imgDir = dir + "\\Memory\\src\\resources\\img";
+    final String dir = System.getProperty("user.dir");
+    final String imgDir = dir + "\\Memory\\src\\resources\\img";
 
-    private ImageIcon image1 = new ImageIcon(imgDir + "\\1.jpg");
-    private ImageIcon image2 = new ImageIcon(imgDir + "\\2.jpg");
-    private ImageIcon image4 = new ImageIcon(imgDir + "\\4.jpg");
-    private ImageIcon image5 = new ImageIcon(imgDir + "\\5.jpg");
-    private ImageIcon image6 = new ImageIcon(imgDir + "\\6.jpg");
-    private ImageIcon image3 = new ImageIcon(imgDir + "\\3.jpg");
-    private ImageIcon image7 = new ImageIcon(imgDir + "\\7.jpg");
-    private ImageIcon image8 = new ImageIcon(imgDir + "\\8.jpg");
+    // \\Memory\\src\\resources\\img\\
+    public static final String chemin = "\\Memory\\src\\resources\\img\\back.jpg";
+
+    private static ImageIcon image1 = new ImageIcon("C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/2.jpg");
+    private ImageIcon image2 = new ImageIcon(
+            "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/2.jpg");
+    private ImageIcon image3 = new ImageIcon(
+            "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/3.jpg");
+    private ImageIcon image4 = new ImageIcon(
+            "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/4.jpg");
+    private ImageIcon image5 = new ImageIcon(
+            "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/5.jpg");
+    private ImageIcon image6 = new ImageIcon(
+            "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/6.jpg");
+    private ImageIcon image7 = new ImageIcon(
+            "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/7.jpg");
+    private ImageIcon image8 = new ImageIcon(
+            "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/8.jpg");
     private ImageIcon back = new ImageIcon(imgDir + "\\back.jpg");
 
     private Dimension taille = new Dimension(200, 200);
@@ -43,6 +53,7 @@ public class MemoryWindows extends JFrame {
             }
         };
 
+        System.out.println(imgDir + "\\back.jpg");
         this.setUndecorated(true);
 
         addWindowListener(l);
@@ -56,14 +67,15 @@ public class MemoryWindows extends JFrame {
         setLayout(new GridLayout(4, 4));
 
         back = new ImageIcon(back.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
-        image2 = new ImageIcon(image2.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
-        image1 = new ImageIcon(image1.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
-        image3 = new ImageIcon(image3.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
-        image4 = new ImageIcon(image4.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
-        image5 = new ImageIcon(image5.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
-        image6 = new ImageIcon(image6.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
-        image7 = new ImageIcon(image7.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
-        image8 = new ImageIcon(image8.getImage().getScaledInstance(210, 210, Image.SCALE_DEFAULT));
+        image1 = new ImageIcon(image1.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        image2 = new ImageIcon(image2.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        image3 = new ImageIcon(image3.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        image4 = new ImageIcon(image4.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        image5 = new ImageIcon(image5.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        image6 = new ImageIcon(image6.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        image7 = new ImageIcon(image7.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        image8 = new ImageIcon(image8.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+
         ListIterator<CarteJButton> it = liste.listIterator();
         while (it.hasNext()) {
             CarteJButton carte = it.next();

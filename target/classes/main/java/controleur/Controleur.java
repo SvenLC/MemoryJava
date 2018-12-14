@@ -12,7 +12,6 @@ import ihm.CarteJButton;
 import ihm.KeyboardListener;
 import ihm.Listener;
 import ihm.MemoryMenu;
-import ihm.MemoryVictory;
 import ihm.MemoryWindows;
 
 public class Controleur {
@@ -23,25 +22,15 @@ public class Controleur {
     private static int y1 = 0;
     private static int x2 = 0;
     private static int y2 = 0;
-   
-   
+    private static MemoryWindows fenetre;
+    private static MemoryMenu menu;
+    private static Listener listener;
+    private static KeyboardListener keyboardListener;
     private Memory memory;
     private boolean victoire;
     private int compteur = 0;
     private int idCarte1 = -1;
     private int idCarte2 = -1;
-    private int nbCoup = 0;
-
-    // Windows
-    private MemoryWindows fenetre;
-    private MemoryMenu menu;
-    private MemoryVictory victory;
-
-    // Listener
-    private Listener listener;
-    private KeyboardListener keyboardListener;
-
-    
 
     public Controleur() {
 
@@ -60,9 +49,6 @@ public class Controleur {
             if (!memory.CheckCarte(idCarte1, idCarte2)) {
                 memory.SetSleep(idCarte1, idCarte2);
                 fenetre.CacherCarte(idCarte1, idCarte2);
-            }
-            if(memory.CheckCarte(idCarte1, idCarte2)) {
-                nbCoup += 1;
             }
 
             idCarte1 = -1;
@@ -84,16 +70,9 @@ public class Controleur {
             String imageId = memory.GetImageId(i);
             fenetre.voirCarte(i, imageId);
 
-        }        
+        }
 
         fenetre.requestFocusInWindow();
-
-        if(memory.isVictory()) {
-
-            victory = new MemoryVictory("Vitoire !", listener);
-
-            victory.requestFocusInWindow();
-        }
 
     }
 
