@@ -46,9 +46,9 @@ public class Controleur {
     public void GererClick(ActionEvent e) {
 
         if (idCarte1 != -1 && idCarte2 != -1) {
-            if (!memory.checkCarte(idCarte1, idCarte2)) {
-                memory.setSleep(idCarte1, idCarte2);
-                fenetre.cacherCarte(idCarte1, idCarte2);
+            if (!memory.CheckCarte(idCarte1, idCarte2)) {
+                memory.SetSleep(idCarte1, idCarte2);
+                fenetre.CacherCarte(idCarte1, idCarte2);
             }
 
             idCarte1 = -1;
@@ -60,14 +60,14 @@ public class Controleur {
 
         if (idCarte1 == -1) {
             idCarte1 = i;
-            memory.setActive(i);
-            String imageId = memory.getImageId(i);
+            memory.SetActive(i);
+            String imageId = memory.GetImageId(i);
             fenetre.voirCarte(i, imageId);
         } else {
             idCarte2 = i;
 
-            memory.setActive(i);
-            String imageId = memory.getImageId(i);
+            memory.SetActive(i);
+            String imageId = memory.GetImageId(i);
             fenetre.voirCarte(i, imageId);
 
         }

@@ -84,7 +84,7 @@ public class MemoryWindows extends JFrame {
         this.setVisible(true);
     }
 
-    public void cacherCarte(int idCarte1, int idCarte2) {
+    public void CacherCarte(int idCarte1, int idCarte2) {
 
         this.liste.get(idCarte1).setIcon(back);
         this.liste.get(idCarte2).setIcon(back);

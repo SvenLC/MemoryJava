@@ -87,7 +87,8 @@ public abstract class Grille implements IGrille {
         return carte;
     }
 
-    private void ajouterUneCarte(int ligne, int colonne, ICarte c) {
+    
+    public void ajouterUneCarte(int ligne, int colonne, ICarte c) {
         this.grille[ligne][colonne] = c;
     }
 

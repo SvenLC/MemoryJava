@@ -18,7 +18,7 @@ public class Memory {
 
     }
 
-    public boolean checkCarte(int IdCarte1, int IdCarte2) {
+    public boolean CheckCarte(int IdCarte1, int IdCarte2) {
 
         CarteMemory carte1 = null;
         CarteMemory carte2 = null;
@@ -26,7 +26,7 @@ public class Memory {
 
         carte1 = (CarteMemory) grille.getCarte(IdCarte1);
         carte2 = (CarteMemory) grille.getCarte(IdCarte2);
-        
+
         if (carte1.isCompatible(carte2)) {
             grille.getCarte(IdCarte1).toDisplay();
             grille.getCarte(IdCarte2).toDisplay();
@@ -39,20 +39,25 @@ public class Memory {
         return match;
     }
 
-    public void setSleep(int carteId1, int carteId2) {
+    public void SetSleep(int carteId1, int carteId2) {
 
         grille.getCarte(carteId1).sleep();
         grille.getCarte(carteId2).sleep();
 
     }
 
-    public void setActive(int i) {
+    public void SetActive(int i) {
         grille.getCarte(i).active();
     }
 
-    public String getImageId(int i) {
+    public String GetImageId(int i) {
 
         return grille.getCarte(i).getImage();
+    }
+
+    public Grille GetGrille() {
+
+        return grille;
     }
 
 }
