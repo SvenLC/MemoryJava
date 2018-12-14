@@ -3,7 +3,7 @@ package memory;
 import java.awt.Color;
 
 public enum Couleur {
-    BLUE("bleu", Color.blue), ORANGE("orange", Color.orange), CYAN("cyan", Color.cyan), BLACK("noire", Color.black),
+    BLUE("Bleu", Color.blue), ORANGE("Orange", Color.orange), CYAN("Cyan", Color.cyan), BLACK("Noire", Color.black),
     LIGHTGRAY("Gris clair", Color.lightGray), RED("Rouge", Color.red), PINK("Rose", Color.pink);
 
     private String couleur;
