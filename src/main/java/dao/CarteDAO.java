@@ -20,7 +20,6 @@ public class CarteDAO extends DAO<CarteMemory> {
         if (instance == null) {
 
             instance = new CarteDAO();
-
         }
 
         return instance;

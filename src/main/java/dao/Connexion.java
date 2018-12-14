@@ -12,7 +12,7 @@ public class Connexion {
 	private static Connection connect = null;
 
 	private static final String ID = "svenlc";
-	private static final String MDP = "251000";
+	private static final String MDP = "DUMMYPASS";
 	private static final String NOM_SERVEUR = "DESKTOP-RJ5OP06";
 	private static final String NOM_BD = "Memory";
 
@@ -26,9 +26,9 @@ public class Connexion {
 				ds.setServerName(NOM_SERVEUR);
 				ds.setDatabaseName(NOM_BD);
 				connect = ds.getConnection();
-				System.out.println("OK");
+				System.out.println("Connecté.  Serveur : " + NOM_SERVEUR + ". Base de donnée : " + NOM_BD);
 			} catch (SQLException e) {
-				System.out.println("Echec de la tentative de connexion : " + e.getMessage() + e.getStackTrace());
+				System.out.println("Echec connexion. Serveur : " + NOM_SERVEUR + ". Base de donnée : " + NOM_BD + ". " + e.getMessage() + e.getStackTrace());
 			}
 		}
 		return connect;
