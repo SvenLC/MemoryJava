@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "Memory",
+                "projectName": "Memory",
+                "workingDirectory": "c:\\Users\\svenl\\OneDrive\\Documents\\BTS A2\\Java\\Memory3\\Memory",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "Memory",
+                "projectName": "Memory",
+                "workingDirectory": "c:\\Users\\svenl\\OneDrive\\Documents\\BTS A2\\Java\\Memory3\\Memory",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
