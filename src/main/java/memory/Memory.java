@@ -12,12 +12,8 @@ public class Memory {
     private static PaquetCarteMemory paquet;
     private boolean victory;
 
-    private static ICarte carte1;
-    private static ICarte carte2;
-    private static int x1 = 0;
-    private static int y1 = 0;
-    private static int x2 = 0;
-    private static int y2 = 0;
+    private static int x = 0;
+    private static int y = 0;  
     private int compteur = 0;
     private boolean victoire;
 
@@ -87,105 +83,71 @@ public class Memory {
     }
 
     public boolean autoPlay() throws InterruptedException {
-        victoire = false;
+        victoire = false;      
         
+        CarteMemory carte1 = (CarteMemory)grille.getCarte(x);
+        CarteMemory carte2 = (CarteMemory)grille.getCarte(y);   
         
-        while(!victoire) {   
+        while(!victoire) {  
+            Thread.sleep(1000);
+          
+            carte1 = (CarteMemory)grille.getCarte(x);  
+            carte2 = (CarteMemory)grille.getCarte(y);    
 
-            carte1 = grille.getCarte(x1, y1);
-            carte2 = grille.getCarte(x2, y2);
-
-              
-
-            while (!carte1.getEtat().equals(Etat.SLEEP) ){
-                carte1 = grille.getCarte(x1, y1);
-                
-                               
-                if (x1 < 3) {
-                    x1++;
-                } else {
-                    x1 = 0;
-                    if (y1 < 3) {
-                        y1++;
-                    }
-                }               
-
-            } 
-            grille.getCarte(x1, y1).active();
-
-            while (!carte2.getEtat().equals(Etat.SLEEP)) {
-                carte2 = grille.getCarte(x2, y2);
+            while(!carte1.getEtat().equals(Etat.SLEEP)) {
                
-                if (x2 < 3) {
-                    x2++;
-                } else {
-                    x2 = 0;
-                    if (y2 < 3) {
-                        y2++;
-                    }
-                }              
+                x++;
+                carte1 = (CarteMemory)grille.getCarte(x);                  
 
+            }  
+            grille.getCarte(x).active();         
+
+            while(!carte2.getEtat().equals(Etat.SLEEP)) { 
+
+                y++;
+                carte2 = (CarteMemory)grille.getCarte(y);                   
+                      
             }
-            grille.getCarte(x2, y2).active();
-
-            //Thread.sleep(500);
-            System.out.println("Carte 1 : X=" + x1 + " Y=" + y1 + " Carte 2 : X=" + x2 + " Y=" + y2);
-            System.out.println(carte1.toString() + "\n" + carte2.toString());
+            grille.getCarte(y).active();
+            
             
 
             
-                
-
+            //System.out.println("Carte 1 : X=" + x + " Y=" + y + " Carte 2 : X=" + x2 + " Y=" + y2);
+            System.out.println(carte1.toString() + "\n" + carte2.toString());           
             
-            int a1 = x1;
-            int b1 = y1;
-            int a2 = x2;
-            int b2 = y2;
+            
 
-            if (carte1.isCompatible(carte2)) {
-                grille.getCarte(a1, b1).toDisplay();
-                grille.getCarte(a2, b2).toDisplay();
-                //Thread.sleep(500);
+            if (carte1.isCompatible(carte2)) {                
+                grille.getCarte(x).toDisplay();
+                grille.getCarte(y).toDisplay();                
                 System.out.println("Les cartes correspondent");
-                if (x1 < 3) {
-                    x1++;
-                } else {
-                    x1 = 0;
-                    if (y1 < 3) {
-                        y1++;
-                    }
-                }
-                x2 = x1;
-                y2 = y1;
 
+                y = x;
                 compteur++;
-            } else {
-                grille.getCarte(a1, b1).sleep();
-                grille.getCarte(a2, b2).sleep();
-                //Thread.sleep(500);
+            } 
+
+            else {
+                SetSleep(x, y);                
                 System.out.println("Les cartes ne correspondent pas");
-                if (x2 < 3) {
-                    x2++;
-                } else {
-                    x2 = 0;
-                    if (y2 < 3) {
-                        y2++;
-                    }
-                    else {
-                        y2 = 0;
+
+                if(y == 15) {
+                    y = 0;
+                    if(x < 15) {
+                        x++;
                     }
                 }
+                else {
+                    y++;
+                }              
             }
 
             if (compteur == 8) {
-                victoire = true;
-                //Thread.sleep(500);
+                victoire = true;                
                 System.out.println("Victoire !");
             }
 
         }
-
-        
 
         return victoire;
 
