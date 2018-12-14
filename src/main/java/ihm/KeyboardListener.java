@@ -7,7 +7,7 @@ import controleur.Controleur;
 
 public class KeyboardListener implements KeyListener {
 
-    public Controleur controleur;
+    private  Controleur controleur;
 
     public KeyboardListener(Controleur controleur) {
 

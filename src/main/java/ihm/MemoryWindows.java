@@ -17,9 +17,9 @@ public class MemoryWindows extends JFrame {
 
     private static final long serialVersionUID = 1L;
 
-    public List<CarteJButton> liste = new ArrayList<CarteJButton>();
+    private List<CarteJButton> liste = new ArrayList<CarteJButton>();
 
-    private ImageIcon image1 = new ImageIcon(
+    private static ImageIcon image1 = new ImageIcon(
             "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/1.jpg");
     private ImageIcon image2 = new ImageIcon(
             "C:/Users/svenl/OneDrive/Documents/BTS A2/Java/Memory3/Memory/src/main/java/img/2.jpg");

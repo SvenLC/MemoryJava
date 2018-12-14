@@ -5,11 +5,11 @@ import Memory.Couleur;
 import Memory.Etat;
 
 public class CarteMemory implements ICarte {
-    protected int ID;
-    protected Couleur couleur;
-    protected Symbole motif;
-    protected Etat etat;
-    protected String imageId;
+    private int ID;
+    private Couleur couleur;
+    private Symbole motif;
+    private Etat etat;
+    private String imageId;
 
     public CarteMemory() {
         super();
@@ -26,9 +26,10 @@ public class CarteMemory implements ICarte {
         this.imageId = c.getImage();
     }
 
-    public CarteMemory(Couleur couleur, Symbole motif) {
+    public CarteMemory(Couleur couleur, Symbole motif, String imageId) {
         this.couleur = couleur;
         this.motif = motif;
+        this.imageId = imageId;
         this.etat = Etat.SLEEP;
 
     }
@@ -54,7 +55,7 @@ public class CarteMemory implements ICarte {
     }
 
     public boolean isCompatible(ICarte c) {
-        return c.getCouleur().equals(this.getCouleur()) || c.getMotif().equals(this.getMotif());
+        return c.getCouleur().equals(this.getCouleur()) && c.getMotif().equals(this.getMotif()) && c.getImage().equals(this.getImage());
     }
 
     public void setID(int ID) {

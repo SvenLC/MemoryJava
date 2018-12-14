@@ -9,7 +9,7 @@ import controleur.Controleur;
 
 public class Listener implements ActionListener {
 
-    public Controleur controleur;
+    private Controleur controleur;
 
     public Listener(Controleur controleur) {
         super();

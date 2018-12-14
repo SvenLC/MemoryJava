@@ -26,8 +26,8 @@ public class Memory {
 
         carte1 = (CarteMemory) grille.getCarte(IdCarte1);
         carte2 = (CarteMemory) grille.getCarte(IdCarte2);
-
-        if (carte1.getImage().equals(carte2.getImage())) {
+        
+        if (carte1.isCompatible(carte2)) {
             grille.getCarte(IdCarte1).toDisplay();
             grille.getCarte(IdCarte2).toDisplay();
             match = true;

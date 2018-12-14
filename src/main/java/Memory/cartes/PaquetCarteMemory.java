@@ -41,10 +41,9 @@ public class PaquetCarteMemory extends Paquet<ICarte> {
 
         for (Couleur couleur : couleurs) {
             for (Symbole motif : motifs) {
-                CarteMemory c1 = new CarteMemory(couleur, motif);
-                CarteMemory c2 = new CarteMemory(couleur, motif);
-                c1.setImage(Integer.toString(i));
-                c2.setImage(Integer.toString(i));
+                String imageId = Integer.toString(i);
+                CarteMemory c1 = new CarteMemory(couleur, motif, imageId);
+                CarteMemory c2 = new CarteMemory(couleur, motif, imageId);                
                 this.add(c1);
                 this.add(c2);
                 i += 1;

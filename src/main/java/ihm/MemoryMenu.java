@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 public class MemoryMenu extends JFrame {
 
     private static final long serialVersionUID = 1L;
-    final Font menuFont = new Font(Font.DIALOG, Font.BOLD, 30);
+    private static final Font menuFont = new Font(Font.DIALOG, Font.BOLD, 30);
 
     public MemoryMenu(String title, Listener listener) {
         super("Memory Chaton !");

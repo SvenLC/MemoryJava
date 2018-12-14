@@ -12,7 +12,7 @@ import Memory.cartes.carte.CarteMemory;
 
 public class CarteDAO extends DAO<CarteMemory> {
 
-    private static String DB = "[dbo].[Carte]";
+    private static final String DB = "[dbo].[Carte]";
     private static CarteDAO instance = null;
 
     public static CarteDAO getInstance() {

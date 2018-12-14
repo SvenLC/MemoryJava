@@ -5,7 +5,6 @@ import java.awt.event.KeyEvent;
 
 import Memory.Etat;
 import Memory.Memory;
-import Memory.cartes.PaquetCarteMemory;
 import Memory.cartes.carte.CarteMemory;
 import Memory.cartes.carte.ICarte;
 import Memory.grille.Grille;
@@ -27,12 +26,9 @@ public class Controleur {
     private static MemoryMenu menu;
     private static Listener listener;
     private static KeyboardListener keyboardListener;
-    public Grille grille;
-    public PaquetCarteMemory paquet;
-    public Memory memory;
-    public int nbCarteVisible = 0;
-    public boolean victoire;
-    public int compteur = 0;
+    private Memory memory;
+    private boolean victoire;
+    private int compteur = 0;
     private int idCarte1 = -1;
     private int idCarte2 = -1;
 
@@ -55,7 +51,6 @@ public class Controleur {
                 fenetre.cacherCarte(idCarte1, idCarte2);
             }
 
-            nbCarteVisible = 0;
             idCarte1 = -1;
             idCarte2 = -1;
 
