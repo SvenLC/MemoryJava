@@ -5,10 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import Memory.Couleur;
-import Memory.Etat;
-import Memory.Symbole;
-import Memory.cartes.carte.CarteMemory;
+import memory.Couleur;
+import memory.Etat;
+import memory.Symbole;
+import memory.cartes.carte.CarteMemory;
 
 public class CarteDAO extends DAO<CarteMemory> {
 

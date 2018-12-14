@@ -1,10 +1,10 @@
-package Memory;
+package memory;
 
-import Memory.cartes.PaquetCarteMemory;
-import Memory.cartes.carte.CarteMemory;
-import Memory.cartes.carte.ICarte;
-import Memory.grille.Grille;
-import Memory.grille.IGrille;
+import memory.cartes.PaquetCarteMemory;
+import memory.cartes.carte.CarteMemory;
+import memory.cartes.carte.ICarte;
+import memory.grille.Grille;
+import memory.grille.IGrille;
 
 public class Memory {
     private static IGrille grille;

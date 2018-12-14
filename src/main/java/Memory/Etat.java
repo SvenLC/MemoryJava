@@ -1,4 +1,4 @@
-package Memory;
+package memory;
 
 public enum Etat {
     ACTIVE("Activé"), SLEEP("Non visible"), VISIBLE("Visible");

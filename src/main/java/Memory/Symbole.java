@@ -1,4 +1,4 @@
-package Memory;
+package memory;
 
 public enum Symbole {
     MAISON("maison"), BALLON("ballon"), FANION("fanion"), DIAMANT("diamant"), ARBRE("arbres"), ETOILE("étoile"),

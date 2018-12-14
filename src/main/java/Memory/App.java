@@ -1,6 +1,6 @@
-package Memory;
+package memory;
 
-import Memory.cartes.carte.CarteMemory;
+import memory.cartes.carte.CarteMemory;
 import controleur.Controleur;
 import dao.CarteDAO;
 

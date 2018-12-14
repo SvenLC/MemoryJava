@@ -1,10 +1,10 @@
-package Memory.grille;
+package memory.grille;
 
 import java.util.Iterator;
 
-import Memory.cartes.IPaquet;
-import Memory.cartes.carte.ICarte;
-import Memory.cartes.carte.CarteMemory;
+import memory.cartes.IPaquet;
+import memory.cartes.carte.ICarte;
+import memory.cartes.carte.CarteMemory;
 
 public abstract class Grille implements IGrille {
 

@@ -6,7 +6,6 @@ import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -21,7 +20,7 @@ public class MemoryWindows extends JFrame {
     private List<CarteJButton> liste = new ArrayList<CarteJButton>();
 
     private static final String dir = System.getProperty("user.dir");
-    private static final String imgDir = dir + "\\Memory\\src\\resources\\img";
+    private static final String imgDir = dir + "\\src\\resources\\img";
 
     private ImageIcon image1 = new ImageIcon(imgDir + "\\1.jpg");
     private ImageIcon image2 = new ImageIcon(imgDir + "\\2.jpg");
@@ -42,6 +41,8 @@ public class MemoryWindows extends JFrame {
                 System.exit(0);
             }
         };
+
+        System.out.println(imgDir);
 
         this.setUndecorated(true);
 

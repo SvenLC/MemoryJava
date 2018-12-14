@@ -1,11 +1,11 @@
-package Memory.cartes;
+package memory.cartes;
 
 import java.util.HashSet;
 
-import Memory.Couleur;
-import Memory.Symbole;
-import Memory.cartes.carte.CarteMemory;
-import Memory.cartes.carte.ICarte;
+import memory.Couleur;
+import memory.Symbole;
+import memory.cartes.carte.CarteMemory;
+import memory.cartes.carte.ICarte;
 
 public class PaquetCarteMemory extends Paquet<ICarte> {
     private static final int NBR_COULEURS = 4;

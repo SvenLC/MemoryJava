@@ -1,8 +1,8 @@
-package Memory.cartes.carte;
+package memory.cartes.carte;
 
-import Memory.Symbole;
-import Memory.Couleur;
-import Memory.Etat;
+import memory.Symbole;
+import memory.Couleur;
+import memory.Etat;
 
 public class CarteMemory implements ICarte {
     private int ID;

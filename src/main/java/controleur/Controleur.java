@@ -3,11 +3,11 @@ package controleur;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-import Memory.Etat;
-import Memory.Memory;
-import Memory.cartes.carte.CarteMemory;
-import Memory.cartes.carte.ICarte;
-import Memory.grille.Grille;
+import memory.Etat;
+import memory.Memory;
+import memory.cartes.carte.CarteMemory;
+import memory.cartes.carte.ICarte;
+import memory.grille.Grille;
 import ihm.CarteJButton;
 import ihm.KeyboardListener;
 import ihm.Listener;

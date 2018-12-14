@@ -1,7 +1,7 @@
-package Memory.grille;
+package memory.grille;
 
-import Memory.cartes.IPaquet;
-import Memory.cartes.carte.ICarte;
+import memory.cartes.IPaquet;
+import memory.cartes.carte.ICarte;
 
 public interface IGrille {
 

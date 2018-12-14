@@ -1,8 +1,8 @@
-package Memory.cartes.carte;
+package memory.cartes.carte;
 
-import Memory.Symbole;
-import Memory.Etat;
-import Memory.Couleur;
+import memory.Symbole;
+import memory.Etat;
+import memory.Couleur;
 
 public interface ICarte {
 

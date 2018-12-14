@@ -1,4 +1,4 @@
-package Memory.cartes;
+package memory.cartes;
 
 import java.util.ArrayList;
 import java.util.Collections;

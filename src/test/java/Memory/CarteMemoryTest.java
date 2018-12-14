@@ -1,11 +1,11 @@
-package Memory;
+package memory;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import Memory.cartes.carte.CarteMemory;
+import memory.cartes.carte.CarteMemory;
 
 public class CarteMemoryTest {
 
